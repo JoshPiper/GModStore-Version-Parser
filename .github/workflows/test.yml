@@ -1,0 +1,36 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Test Prep 1
+        uses: JoshPiper/GModStore-Version-Parser@main
+        id: test1
+        with:
+          version: "v1.0.0-beta"
+      - name: Dump 1
+        run: echo "${{ toJSON(steps.test1.outputs) }}"
+      - name: Test Prep 2
+        uses: JoshPiper/GModStore-Version-Parser@main
+        id: test2
+        with:
+          version: "refs/tags/v2.0.0-alpha"
+      - name: Dump 2
+        run: echo "${{ toJSON(steps.test2.outputs) }}"
+      - name: Test Prep 3
+        uses: JoshPiper/GModStore-Version-Parser@main
+        id: test3
+        with:
+          version: "refs/heads/feat/test"
+      - name: Dump 3
+        run: echo "${{ toJSON(steps.test3.outputs) }}"

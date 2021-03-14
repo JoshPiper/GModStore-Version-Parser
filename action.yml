@@ -1,0 +1,23 @@
+name: "Branch Checker"
+description: "Checks input data to determine the type of ref the action is running on."
+
+inputs:
+  version:
+    description: "The version number to use. Defaults to GITHUB_SHA if not provided."
+    required: false
+
+outputs:
+  branch:
+    description: "If this action is running on a branch."
+  tag:
+    description: "If this action is running on a tag."
+  rawversion:
+    description: "The raw version, used for the rest API."
+  version:
+    description: "The description string, to be used in @version tags or documentation."
+  deploy:
+    description: "The area this should deploy to, if at all."
+
+runs:
+  using: "node12"
+  main: "dist/index.js"
