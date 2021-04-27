@@ -1,4 +1,13 @@
-# 0.1.0 (2021-03-14)
+## [0.1.1](https://github.com/JoshPiper/GModStore-Version-Parser/compare/v0.1.0...v0.1.1) (2021-04-27)
+
+
+### Bug Fixes
+
+* Prevents the parser thinking a tag isn't a tag. ([bbc95cc](https://github.com/JoshPiper/GModStore-Version-Parser/commit/bbc95ccf454fcff92ccc4aba0b53fcc79bea2230))
+
+
+
+# [0.1.0](https://github.com/JoshPiper/GModStore-Version-Parser/compare/741aefc2ca533e70b85905fc3027a12b4ff91dbb...v0.1.0) (2021-03-14)
 
 
 ### Bug Fixes

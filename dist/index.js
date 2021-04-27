@@ -59,7 +59,7 @@ try {
 	if (type === "explicit" || type === "tags"){
 		core.info("Version is explicit or tag based.")
 		core.setOutput("branch", false)
-		core.setOutput("tag", type === "tag")
+		core.setOutput("tag", type === "tags")
 
 		core.setOutput("rawversion", name)
 		core.info("Attempting to parse name as SemVer")
