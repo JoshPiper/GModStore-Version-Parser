@@ -86,7 +86,6 @@ const goodExplicit = [
 
 const node = "node"
 const script = path.join(__dirname, '..', 'index.js')
-// const script = "-v"
 
 async function getCommandsFromRun(environment){
 	environment.PATH = process.env.PATH
