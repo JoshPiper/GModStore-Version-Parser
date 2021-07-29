@@ -116,7 +116,7 @@ async function getCommandsFromRun(environment){
 	}))
 
 	let commands = {}
-	let outputs = output.stdout.matchAll(/::([\w-]*)(.*)\r\n/g)
+	let outputs = output.stdout.matchAll(/::([\w-]*)(.*)[\n\r]{1,2}/g)
 	for (let output of outputs){
 		let command = output[1].trim()
 		let args = output[2].trim()
