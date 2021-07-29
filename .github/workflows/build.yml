@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - master
+      - fix/test-path
 
 jobs:
   test:
@@ -17,28 +18,28 @@ jobs:
         run: npm i
       - name: Run Tests
         run: npm run test
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    needs: [test]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: |
-          npm i
-      - name: Build Release
-        id: changelog
-        uses: TriPSs/conventional-changelog-action@v3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          pre-commit: .github/scripts/pre-commit.js
-      - name: Create Release
-        uses: actions/create-release@v1
-        if: ${{ steps.changelog.outputs.skipped == 'false' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.changelog.outputs.tag }}
-          release_name: ${{ steps.changelog.outputs.tag }}
-          body: ${{ steps.changelog.outputs.clean_changelog }}
+#  build:
+#    name: Build
+#    runs-on: ubuntu-latest
+#    needs: [test]
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#      - name: Install Dependencies
+#        run: |
+#          npm i
+#      - name: Build Release
+#        id: changelog
+#        uses: TriPSs/conventional-changelog-action@v3
+#        with:
+#          github-token: ${{ secrets.GITHUB_TOKEN }}
+#          pre-commit: .github/scripts/pre-commit.js
+#      - name: Create Release
+#        uses: actions/create-release@v1
+#        if: ${{ steps.changelog.outputs.skipped == 'false' }}
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          tag_name: ${{ steps.changelog.outputs.tag }}
+#          release_name: ${{ steps.changelog.outputs.tag }}
+#          body: ${{ steps.changelog.outputs.clean_changelog }}
