@@ -13,6 +13,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          cache: 'npm'
+          node-version: 16
       - name: Install Dependencies
         run: npm i
       - name: Run Tests
