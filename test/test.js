@@ -1,6 +1,7 @@
 const assert = require("assert")
 const proc = require("child_process")
 const util = require("util")
+const path = require("path")
 
 const goodBranches = [
 	{arg: "refs/heads/master", exp: {
@@ -83,8 +84,11 @@ const goodExplicit = [
 	}
 ]
 
+const node = "node"
+const script = path.join(__dirname, '..', 'index.js')
+
 async function getCommandsFromRun(environment){
-	let sub_proc = await proc.spawn('node', ['index.js'], {
+	let sub_proc = await proc.spawn(node, [script], {
 		env: environment,
 		encoding: "utf8"
 	})
