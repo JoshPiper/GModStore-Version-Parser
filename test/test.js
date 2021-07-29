@@ -85,10 +85,12 @@ const goodExplicit = [
 ]
 
 const node = "node"
-// const script = path.join(__dirname, '..', 'index.js')
-const script = "-v"
+const script = path.join(__dirname, '..', 'index.js')
+// const script = "-v"
 
 async function getCommandsFromRun(environment){
+	environment.PATH = process.env.PATH
+
 	let sub_proc = await proc.spawn(node, [script], {
 		env: environment,
 		encoding: "utf8"
