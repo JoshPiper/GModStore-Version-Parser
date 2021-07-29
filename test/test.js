@@ -85,7 +85,8 @@ const goodExplicit = [
 ]
 
 const node = "node"
-const script = path.join(__dirname, '..', 'index.js')
+// const script = path.join(__dirname, '..', 'index.js')
+const script = "-v"
 
 async function getCommandsFromRun(environment){
 	let sub_proc = await proc.spawn(node, [script], {
