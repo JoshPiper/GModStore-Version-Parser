@@ -5,7 +5,7 @@ Easily upload an addon build to GModStore.
 ## Usage
 ```yml
 - name: Get Upload Information
-  uses: JoshPiper/GModStore-Version-Parser@main
+  uses: JoshPiper/GModStore-Version-Parser@v0.1.1
   id: version
 - name: Dump Information
   run: echo "${{ toJSON(steps.version.outputs) }}"
