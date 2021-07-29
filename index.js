@@ -43,7 +43,8 @@ try {
 				// We're using a branch / tag input.
 				name = name.join("/")
 			} else {
-				name = name.unshift(refs, type).join("/")
+				name.unshift(refs, type)
+				name = name.join("/")
 				type = "explicit"
 			}
 	}
