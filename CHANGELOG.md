@@ -1,3 +1,17 @@
+# [0.2.0](https://github.com/JoshPiper/GModStore-Version-Parser/compare/v0.1.1...v0.2.0) (2021-07-29)
+
+
+### Bug Fixes
+
+* **test:** Fix test failure on Linux runner. ([#2](https://github.com/JoshPiper/GModStore-Version-Parser/issues/2)) ([d778c27](https://github.com/JoshPiper/GModStore-Version-Parser/commit/d778c2709b202f87f2a8604eace77c7c7a0a2738))
+
+
+### Features
+
+* **test:** Added automated testing. ([#1](https://github.com/JoshPiper/GModStore-Version-Parser/issues/1)) ([270b66c](https://github.com/JoshPiper/GModStore-Version-Parser/commit/270b66cc42c31b62a394e453a67da0bf62d4d1a4))
+
+
+
 ## [0.1.1](https://github.com/JoshPiper/GModStore-Version-Parser/compare/v0.1.0...v0.1.1) (2021-04-27)
 
 
