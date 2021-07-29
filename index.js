@@ -65,7 +65,7 @@ try {
 		}
 
 		core.info("Setting deployment type.")
-		// Public Demo, All Owners Stable, Restricted Beta Alpha and Private.
+		// Public Demo, All Owners Stable, Restricted Beta, Alpha and Private.
 		// 1.0.0-stable-private should work out to private.
 		let acceptableTypes = ["demo", "stable", "beta", "alpha", "private"]
 		let releaseType = "stable"
