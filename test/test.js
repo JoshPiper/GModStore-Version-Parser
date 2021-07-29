@@ -159,7 +159,7 @@ async function getCommandsFromRun(environment){
 
 async function getOutputsFromRun(...args){
 	let [commands, stdout] = await getCommandsFromRun(...args)
-	// console.log(args, commands, stdout)
+	console.log(args, commands, stdout)
 	return commands['set-output'] ?? {}
 }
 
