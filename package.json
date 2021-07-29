@@ -23,6 +23,7 @@
     "semver": "^7.3.4"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.27.0"
+    "@vercel/ncc": "^0.27.0",
+    "mocha": "^9.0.3"
   }
 }
