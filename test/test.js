@@ -3,6 +3,10 @@ const proc = require("child_process")
 const util = require("util")
 const path = require("path")
 
+const IN_DEBUG = false;
+const NODE_PATH = "node"
+const SCRIPT_PATH = path.join(__dirname, '..', 'index.js')
+
 const goodBranches = [
 	{arg: "refs/heads/master", exp: {
 		branch: 'true',
@@ -84,13 +88,10 @@ const goodExplicit = [
 	}
 ]
 
-const node = "node"
-const script = path.join(__dirname, '..', 'index.js')
-
 async function getCommandsFromRun(environment){
 	environment.PATH = process.env.PATH
 
-	let sub_proc = await proc.spawn(node, [script], {
+	let sub_proc = await proc.spawn(NODE_PATH, [SCRIPT_PATH], {
 		env: environment,
 		encoding: "utf8"
 	})
@@ -159,7 +160,9 @@ async function getCommandsFromRun(environment){
 
 async function getOutputsFromRun(...args){
 	let [commands, stdout] = await getCommandsFromRun(...args)
-	console.log(args, commands, stdout)
+	if (IN_DEBUG){
+		console.log(args, commands, stdout)
+	}
 	return commands['set-output'] ?? {}
 }
 
