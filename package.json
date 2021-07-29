@@ -8,7 +8,8 @@
     "clean-modules": "((ls node_modules > /dev/null 2>&1) && rm -r ./node_modules) || true",
     "clean": "npm run clean-dist && npm run clean-modules",
     "compile": "ncc build index.js --license licenses.txt",
-    "build": "npm run clean && npm i && npm run compile"
+    "build": "npm run clean && npm i && npm run compile",
+    "test": "mocha"
   },
   "repository": {
     "type": "github",
@@ -23,6 +24,7 @@
     "semver": "^7.3.4"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.27.0"
+    "@vercel/ncc": "^0.27.0",
+    "mocha": "^9.0.3"
   }
 }
