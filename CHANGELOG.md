@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/JoshPiper/GModStore-Version-Parser/compare/v0.2.0...v0.2.1) (2021-07-29)
+
+
+### Bug Fixes
+
+* break when using explicit tags with multiple /'s ([a6c641a](https://github.com/JoshPiper/GModStore-Version-Parser/commit/a6c641ab962a2da0ed0257f655ad954f1bb6cf42))
+
+
+
 # [0.2.0](https://github.com/JoshPiper/GModStore-Version-Parser/compare/v0.1.1...v0.2.0) (2021-07-29)
 
 
